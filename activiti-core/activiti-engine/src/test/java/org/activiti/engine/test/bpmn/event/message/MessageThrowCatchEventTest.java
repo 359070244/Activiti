@@ -244,9 +244,7 @@ public class MessageThrowCatchEventTest extends ResourceActivitiTestCase {
                                                              .getActivityBehaviorFactory())
                                                              .as("should provide custom throw message delegate factory")
                                                              .extracting("throwMessageDelegateFactory")
-                                                             .allSatisfy(result -> {
-                                                                 assertThat(result).isInstanceOf(TestThrowMessageDelegateFactory.class);
-                                                             });
+                                                             .isInstanceOf(TestThrowMessageDelegateFactory.class);
     }
 
     @Deployment(resources = {
